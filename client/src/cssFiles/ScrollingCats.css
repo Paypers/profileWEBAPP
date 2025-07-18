@@ -1,0 +1,6 @@
+.ScrollingCats-image {
+  max-width: 20%; /* Ensure image is not wider than its container */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 20px;
+  border-radius: 8px; /* Optional: adds rounded corners */
+}

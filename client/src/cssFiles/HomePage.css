@@ -1,0 +1,24 @@
+.HomePage {
+  text-align: center;
+  background-image: url('../assets/memphis-mini-dark.webp');
+  background-repeat: repeat;
+  background-size: 300px; /* Adjust size as needed */
+  background-color: #282c34; /* Fallback color */
+  min-height: 130vh; /* Ensure it covers the full screen height */
+}
+
+.HomePage-header {
+  display: flex;
+  flex-direction: row; /* Changed to row for left-to-right arrangement */
+  justify-content: center; /* Horizontally center the content */
+  align-items: flex-start; /* Align items to the top */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px; /* Added padding for better spacing */
+}
+
+.HomePage-description {
+  font-size: calc(10px + 1vmin);
+  color: #ffffff; /* Lighter color for contrast */
+  margin-top: 20px; /* Spacing from the header */
+}
