@@ -1,19 +1,40 @@
 .projects-section {
-  padding: 40px 20px;
+  padding: 10px 10px;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   color: white;
 }
 
+.projects-section p{
+  margin-bottom: 20px; /* Space between paragraph and project list */
+}
+
 .projects-section h2 {
-  margin-top: 0;
+  font-family: "Arvo";
+  margin: 0;
+  margin-top: 2.5rem;
   font-size: 2rem;
   border-bottom: 2px solid #61dafb;
   padding-bottom: 10px;
+  padding-top: 6%;
   display: inline-block;
 }
 
+/* Remove top margin from the very first h2 to keep it aligned */
+.projects-section > h2:first-of-type {
+  margin-top: 0;
+}
+
 .projects-section p {
+  font-family: "Arvo";
   font-size: 1.1rem;
   margin-bottom: 2rem;
+}
+
+.projects-section .project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the cards in the container */
+  gap: 20px; /* Space between project cards */
+  margin-top: 2rem; /* Add space between the title and the cards */
 }

@@ -1,0 +1,57 @@
+.project-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 320px; /* A fixed width for cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-family: "Arvo", serif;
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+}
+
+.project-description {
+  font-family: "Arvo", serif;
+  font-size: 1rem;
+  flex-grow: 1;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.project-links a {
+  color: #61dafb;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.project-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}

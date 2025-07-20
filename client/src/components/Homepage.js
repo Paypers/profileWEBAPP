@@ -3,6 +3,7 @@ import MainInfo from './MainInfo';
 function HomePage() {
   return (
     <div className="HomePage">
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Arvo" />
       {/* The <title> tag should be in the public/index.html file, not here */}
       <header className="HomePage-header">
         <h1>Welcome to Jay's Website</h1>

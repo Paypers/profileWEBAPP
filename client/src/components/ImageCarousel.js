@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+// Import SVG icons for carousel buttons
+import { ReactComponent as LeftArrow } from '../assets/icons/arrow-left-2-svgrepo-com.svg';
+import { ReactComponent as RightArrow } from '../assets/icons/arrow-right-2-svgrepo-com.svg';
+
 // Import all the cat images from the assets folder
 import catImage1 from '../assets/FloatingCats/DSC08561.jpg';
 import catImage2 from '../assets/FloatingCats/DSC08564.jpg';
@@ -43,19 +47,34 @@ function ImageCarousel() {
     setCurrentIndex(newIndex);
   };
 
+  const numImages = images.length;
+
   return (
     <div className="carousel-container">
       <div className="carousel-track">
         {images.map((image, index) => {
-          const offset = index - currentIndex;
+          let offset = index - currentIndex;
+
+          // This logic handles the circular nature of the carousel.
+          // It calculates the shortest distance between images to create a wrapping effect.
+          if (offset > numImages / 2) {
+            offset -= numImages;
+          } else if (offset < -numImages / 2) {
+            offset += numImages;
+          }
+
           const absOffset = Math.abs(offset);
 
           // Hide cards that are too far away for performance and aesthetics
           const isVisible = absOffset <= 2;
 
+          // Make the center card 10% larger and fade out the side cards.
+          const scale = absOffset === 0 ? 1.2 : 1;
+          const newOpacity = isVisible ? (absOffset === 0 ? 1 : 0.37) : 0;
+
           const style = {
-            transform: `rotateY(${offset * -35}deg) translateX(${offset * 35}%) translateZ(${absOffset * -200}px)`,
-            opacity: isVisible ? 1 : 0,
+            transform: `rotateY(${offset * -35}deg) translateX(${offset * 35}%) translateZ(${absOffset * -213}px) scale(${scale})`,
+            opacity: newOpacity,
             zIndex: images.length - absOffset,
           };
 
@@ -66,8 +85,12 @@ function ImageCarousel() {
           );
         })}
       </div>
-      <button onClick={goToPrevious} className="carousel-button prev-button">&lt;</button>
-      <button onClick={goToNext} className="carousel-button next-button">&gt;</button>
+      <button onClick={goToPrevious} className="carousel-button prev-button">
+        <LeftArrow />
+      </button>
+      <button onClick={goToNext} className="carousel-button next-button">
+        <RightArrow />
+      </button>
     </div>
   );
 }

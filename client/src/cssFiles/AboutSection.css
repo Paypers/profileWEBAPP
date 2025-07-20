@@ -1,13 +1,13 @@
 .about-section {
-  padding: 40px 20px;
-  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px 10px;
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  margin-bottom: 2rem;
   color: white;
 }
 
 .about-section h2 {
-  margin-top: 0;
+  font-family: "Arvo";
+  margin-bottom: 3px;
   font-size: 2rem;
   border-bottom: 2px solid #61dafb;
   padding-bottom: 10px;
@@ -15,5 +15,7 @@
 }
 
 .about-section p {
+  font-family: "Arvo";
   font-size: 1.1rem;
+  text-align: left;
 }

@@ -1,11 +1,11 @@
 .carousel-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 673px;
   margin: 2rem auto;
-  height: 450px; /* Fixed height for 3D space */
+  height: 505px; /* Fixed height for 3D space */
   perspective: 1200px; /* Creates a 3D space */
-  padding: 10px;
+  padding-top: 3%; /* Adds space for the buttons */
 }
 
 .carousel-track {
@@ -24,9 +24,11 @@
   width: 60%; /* Cards are smaller than the container */
   height: 100%;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(161, 161, 161, 0.15);
   overflow: hidden; /* Ensures the image is cropped */
-  background-color: #e0e0e0; /* A light gray background while images load */
+  background-color: rgba(10, 10, 10, 0.9); /* Semi-transparent frame to see other cards through */
+  padding: 8px; /* Creates the "stroke" or frame effect */
+  box-sizing: border-box; /* Makes padding inclusive of width/height */
   transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.6s ease, z-index 0.6s ease;
 }
 
@@ -48,13 +50,23 @@
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 24px;
-  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   z-index: 10; /* Ensure buttons are on top of all cards */
+}
+
+.carousel-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.carousel-button svg path {
+  stroke: currentColor; /* Inherits color from the button, making hover effects easy */
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .carousel-button:hover {
