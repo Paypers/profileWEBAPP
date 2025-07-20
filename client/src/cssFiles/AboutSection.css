@@ -1,0 +1,19 @@
+.about-section {
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.about-section h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  border-bottom: 2px solid #61dafb;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+}

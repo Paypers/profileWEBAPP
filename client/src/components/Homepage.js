@@ -1,17 +1,14 @@
-import ImageCarousel from "./ImageCarousel";
+import MainInfo from './MainInfo';
 
 function HomePage() {
   return (
     <div className="HomePage">
-      <title>Jay's Website</title>
+      {/* The <title> tag should be in the public/index.html file, not here */}
       <header className="HomePage-header">
         <h1>Welcome to Jay's Website</h1>
       </header>
-        <p className="HomePage-description">
-        This is a simple React application.
-        Feel free to explore!
-        </p>
-        <ImageCarousel />
+      {/* The description, buttons, and carousel are now inside MainInfo */}
+      <MainInfo />
     </div>
   );
 }
