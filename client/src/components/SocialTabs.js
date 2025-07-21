@@ -3,6 +3,7 @@ import React from 'react';
 // Import social media icons
 import { ReactComponent as GithubIcon } from '../assets/icons/github-icon.svg';
 import { ReactComponent as LinkedInIcon } from '../assets/icons/linkedin-icon.svg';
+import { ReactComponent as InstagramIcon } from '../assets/icons/instagram-icon.svg';
 
 // Import the CSS for this component
 import '../cssFiles/SocialTabs.css';
@@ -18,6 +19,11 @@ const socialLinks = [
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/jielili/', // TODO: Replace with your LinkedIn URL
     icon: <LinkedInIcon />,
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/jayl.shotss/', // TODO: Replace with your Instagram URL
+    icon: <InstagramIcon />,
   },
   // Add more social media links here
   // {
