@@ -34,6 +34,7 @@
 .graduate-image {
   width: 100%;
   height: 100%;
+  display: block; /* Added to prevent extra spacing issues */
   object-fit: cover; /* This scales and crops the image to fill the container, ensuring it always fits vertically. */
   animation: fadeIn 2.4s ease-in-out;
 }

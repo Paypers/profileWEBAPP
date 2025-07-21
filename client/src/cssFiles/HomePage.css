@@ -1,13 +1,74 @@
-.HomePage {
-  text-align: center;
-  background-image: url('../assets/memphis-mini-dark.webp');
-  background-repeat: repeat;
-  background-size: 300px; /* Adjust size as needed */
-  background-color: #282c34; /* Fallback color */
-  min-height: 100vh; /* Adjusted to fit the viewport height */
-  padding: 2rem 0; /* Adds some vertical spacing at the top and bottom */
-  box-sizing: border-box; /* Ensures padding is included in the element's total height */
+/* --- NEW AND UPDATED STYLES --- */
+
+/*
+  Define custom properties (variables) for the split effect to make it
+  easier to adjust in one place.
+*/
+:root {
+  --split-vertical-center: 73%; /* Moves the split effect up or down */
+  --split-angle-offset: 8.8vw; /* Controls the angle of the split (based on tan(10deg)) */
 }
+
+.HomePage {
+  background-color: #282c34; /* Fallback color remains */
+  position: relative; /* Needed for z-index context if required */
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+  /* The height is now determined by the content-wrapper */
+}
+
+.HomePage.visible {
+  opacity: 1;
+}
+
+/* New container for the fixed background layers */
+.background-layers {
+  position: fixed; /* Fixes the layers to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Ensures it's behind the content */
+  pointer-events: none; /* Allows scroll events to pass through to the page */
+}
+
+/* Common style for all background layers */
+.revealed-image-layer, .bottom-split-layer, .top-split-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* The bottom split layer is static and clipped to a 20-degree angle */
+.bottom-split-layer {
+  /* Uses CSS variables for easier maintenance */
+  clip-path: polygon(0% 100%, 100% 100%, 100% calc(var(--split-vertical-center) - var(--split-angle-offset)), 0% calc(var(--split-vertical-center) + var(--split-angle-offset)));
+  z-index: 2; /* Sits above the revealed image */
+}
+
+/* The top split layer is also clipped and will be animated with JS */
+.top-split-layer {
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(var(--split-vertical-center) - var(--split-angle-offset)), 0% calc(var(--split-vertical-center) + var(--split-angle-offset)));
+  z-index: 3; /* Sits on top of everything else in the background */
+  will-change: transform; /* Performance optimization for animation */
+}
+
+/* New wrapper for the actual page content */
+.content-wrapper {
+  /* Set a fixed height much larger than the viewport to create scroll space */
+  height: 250vh;
+  padding: 2rem 0;
+  text-align: center;
+  position: relative; /* Must be relative to sit above the fixed background */
+  z-index: 1;
+}
+
+/* --- ORIGINAL STYLES (Slightly adjusted for new structure) --- */
 
 .HomePage-header {
   display: flex;
@@ -16,16 +77,10 @@
   align-items: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding-bottom: 1rem; /* Controls space between header and content below */
+  padding-bottom: 1rem;
 }
 
-/* Add this new rule to remove the default browser margin from the h1 */
 .HomePage-header h1 {
   margin: 3px;
 }
 
-.HomePage-description {
-  font-size: calc(10px + 1vmin);
-  color: #ffffff; /* Lighter color for contrast */
-  margin-top: 0; /* Spacing is now controlled by the header's padding-bottom */
-}

@@ -2,22 +2,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px; /* Space between icons */
-  margin: 5px 0; /* Space above and below the tabs */
-  cursor: pointer; /* Change cursor to pointer for better UX */
+  gap: 1rem; /* Add space between the button and icons */
+  margin-bottom: 2rem;
 }
 
 .social-tabs a {
-  color: #ffffff; /* Sets the initial color of the SVG icon */
-  transition: color 0.3s ease, transform 0.3s ease;
+  color: #ffffff; /* A nice blue for the icons */
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  display: inline-block; /* Helps with transform */
 }
 
 .social-tabs a:hover {
-  color: #61dafb; /* Color on hover */
-  transform: scale(1.15); /* Slightly enlarge icon on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+  color: #ffffff;
 }
 
-.social-tabs svg {
-  width: 32px;
-  height: 32px;
+.social-tabs a svg {
+  width: 40px; /* Standardize icon size */
+  height: 40px;
 }
+
+/* Style for the new "About Me" button */
+.about-me-button {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  border-radius: 25px; /* Pill shape */
+  padding: 10px 24px;
+  font-family: 'Arvo', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 1.5rem;
+}
+
+.about-me-button:hover {
+  background-color: #ffffff;
+  color: #282c34; /* Dark text on hover for contrast */
+}
+

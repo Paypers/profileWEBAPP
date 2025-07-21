@@ -19,7 +19,7 @@ const skills = [
 
 function AboutSection() {
   return (
-    <section className="about-section">
+    <section id="about-section" className="about-section">
       <div className="about-content-wrapper">
         <GraduateUb />
         <div className="about-text">

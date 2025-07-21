@@ -28,8 +28,19 @@ const socialLinks = [
 ];
 
 function SocialTabs() {
+  const handleScrollToAbout = () => {
+    const aboutSection = document.getElementById('about-section');
+    if (aboutSection) {
+      // Use smooth scrolling for a better user experience
+      aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="social-tabs">
+      <button onClick={handleScrollToAbout} className="about-me-button">
+        About Me
+      </button>
       {socialLinks.map(social => (
         <a 
           key={social.name} 

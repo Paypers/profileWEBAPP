@@ -34,13 +34,13 @@ function Graduate_UB() {
 
   return (
     <div className="graduate-ub-container" onClick={handleClick}>
-      {/* Always render the image, which will be the first one on load */}
-      <img key={currentImageIndex} src={gradImages[currentImageIndex]} alt="A fun moment" className="graduate-image" />
+      {/* The 'key' prop has been removed to prevent the element from re-mounting on change */}
+      <img src={gradImages[currentImageIndex]} alt="A fun moment" className="graduate-image" />
 
       {/* Conditionally render the "Click Me" overlay on top for the first load */}
       {isFirstLoad && (
         <div className="click-me-overlay">
-          <span>Click Me!</span>
+          <span>Click Me!<br />More Ahead!</span>
         </div>
       )}
     </div>
