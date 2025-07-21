@@ -1,8 +1,5 @@
 .projects-section {
-  padding: 10px 10px;
-  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  color: white;
 }
 
 .projects-section p{
@@ -11,12 +8,9 @@
 
 .projects-section h2 {
   font-family: "Arvo";
-  margin: 0;
-  margin-top: 2.5rem;
+  padding: 1rem 1rem 0.3rem;
   font-size: 2rem;
   border-bottom: 2px solid #61dafb;
-  padding-bottom: 10px;
-  padding-top: 6%;
   display: inline-block;
 }
 
@@ -28,7 +22,7 @@
 .projects-section p {
   font-family: "Arvo";
   font-size: 1.1rem;
-  margin-bottom: 2rem;
+  padding: .5rem;
 }
 
 .projects-section .project-list {

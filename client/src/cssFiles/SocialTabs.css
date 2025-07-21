@@ -1,0 +1,23 @@
+.social-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px; /* Space between icons */
+  margin: 5px 0; /* Space above and below the tabs */
+  cursor: pointer; /* Change cursor to pointer for better UX */
+}
+
+.social-tabs a {
+  color: #ffffff; /* Sets the initial color of the SVG icon */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-tabs a:hover {
+  color: #61dafb; /* Color on hover */
+  transform: scale(1.15); /* Slightly enlarge icon on hover */
+}
+
+.social-tabs svg {
+  width: 32px;
+  height: 32px;
+}

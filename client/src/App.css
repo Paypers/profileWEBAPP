@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+
+/*
+  A simple, modern CSS reset.
+  This helps ensure consistent styling across different browsers.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Define CSS variables for colors, fonts, etc.
+  This makes it easy to maintain a consistent theme.
+*/
+:root {
+  --primary-bg-color: #121212;
+  --secondary-bg-color: #1e1e1e;
+  --primary-text-color: #e0e0e0;
+  --secondary-text-color: #b3b3b3;
+  --accent-color: #bb86fc;
+  --font-primary: 'Arvo', serif;
+  --font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/*
+  Base styles for the body.
+  Sets the default font, colors, and enables smooth scrolling.
+*/
+body {
+  margin: 0;
+  font-family: var(--font-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  line-height: 1.6;
+}
+
+/*
+  The main container for the application.
+  It's good practice to have a root container.
+*/
+.App {
+  text-align: center;
+}
+
+/*
+  Basic styling for links.
+*/
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/*
+  Basic styling for headings.
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  color: var(--primary-text-color);
+  margin-bottom: 0.75rem;
+}

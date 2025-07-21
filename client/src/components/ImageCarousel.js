@@ -1,35 +1,39 @@
 import React, { useState } from 'react';
 
+import '../cssFiles/ImageCarousel.css';
 // Import SVG icons for carousel buttons
 import { ReactComponent as LeftArrow } from '../assets/icons/arrow-left-2-svgrepo-com.svg';
 import { ReactComponent as RightArrow } from '../assets/icons/arrow-right-2-svgrepo-com.svg';
 
 // Import all the cat images from the assets folder
-import catImage1 from '../assets/FloatingCats/DSC08561.jpg';
-import catImage2 from '../assets/FloatingCats/DSC08564.jpg';
-import catImage3 from '../assets/FloatingCats/DSC08567.jpg';
-import catImage5 from '../assets/FloatingCats/DSC08569-3.jpg';
-import catImage7 from '../assets/FloatingCats/DSC08580.jpg';
-import catImage9 from '../assets/FloatingCats/DSC08587.jpg';
-import catImage10 from '../assets/FloatingCats/DSC08596.jpg';
-import catImage11 from '../assets/FloatingCats/DSC08610.jpg';
-import catImage12 from '../assets/FloatingCats/DSC08618.jpg';
-import catImage13 from '../assets/FloatingCats/DSC08627.jpg';
-import catImage14 from '../assets/FloatingCats/DSC08638.jpg';
+// It's highly recommended to resize and compress your images for web use to improve performance.
+// For example, you can resize your images to be ~810px wide and save them in the WebP format.
+// I've updated the imports below assuming you've renamed your optimized images sequentially.
+import catImage1 from '../assets/FloatingCats/cat-1.webp';
+import catImage2 from '../assets/FloatingCats/cat-2.webp';
+import catImage3 from '../assets/FloatingCats/cat-3.webp';
+import catImage4 from '../assets/FloatingCats/cat-4.webp';
+import catImage5 from '../assets/FloatingCats/cat-5.webp';
+import catImage6 from '../assets/FloatingCats/cat-6.webp';
+import catImage7 from '../assets/FloatingCats/cat-7.webp';
+import catImage8 from '../assets/FloatingCats/cat-8.webp';
+import catImage9 from '../assets/FloatingCats/cat-9.webp';
+import catImage10 from '../assets/FloatingCats/cat-10.webp';
+import catImage11 from '../assets/FloatingCats/cat-11.webp';
 
 // Create an array with all the imported images
 const images = [
   catImage1,
   catImage2,
   catImage3,
+  catImage4,
   catImage5,
+  catImage6,
   catImage7,
+  catImage8,
   catImage9,
   catImage10,
   catImage11,
-  catImage12,
-  catImage13,
-  catImage14,
 ];
 
 function ImageCarousel() {
@@ -65,13 +69,17 @@ function ImageCarousel() {
 
           const absOffset = Math.abs(offset);
 
-          // Hide cards that are too far away for performance and aesthetics
-          const isVisible = absOffset <= 2;
+          // Render one extra card on each side and set its opacity to 0.
+          // This allows it to be transitioned in instead of just appearing.
+          const isVisible = absOffset <= 3;
+
+          if (!isVisible) {
+            return null; // Don't render the element at all if it's not visible
+          }
 
           // Make the center card 10% larger and fade out the side cards.
           const scale = absOffset === 0 ? 1.2 : 1;
-          const newOpacity = isVisible ? (absOffset === 0 ? 1 : 0.37) : 0;
-
+          const newOpacity = absOffset > 2 ? 0 : absOffset === 0 ? 1 : 0.6 ;
           const style = {
             transform: `rotateY(${offset * -35}deg) translateX(${offset * 35}%) translateZ(${absOffset * -213}px) scale(${scale})`,
             opacity: newOpacity,

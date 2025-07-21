@@ -1,0 +1,26 @@
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px; /* Replaces margin on individual pills for better control */
+  padding: 1rem;
+}
+
+.skill-pill {
+  background-color: #f0f0f0; /* Soft white background */
+  border: 1px solid #d1d1d1; /* Light gray border */
+  border-radius: 20px;
+  color: #333; /* Black text */
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-pill:hover {
+  background-color: #333; /* Inversed: black background */
+  color: #f0f0f0; /* Inversed: soft white text */
+  border-color: #333; /* Match border to background */
+  cursor: default;
+}

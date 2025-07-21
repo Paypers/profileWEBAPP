@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
-import './cssFiles/HomePage.css';
-import './cssFiles/ImageCarousel.css';
-import './cssFiles/MainInfo.css';
-import './cssFiles/AboutSection.css';
-import './cssFiles/ProjectsSection.css';
+import React from 'react';
+import './App.css';
 import HomePage from './components/Homepage';
 
 
 function App() {
   return (
-    <HomePage />
+    <div className="App">
+      <HomePage />
+    </div>
   )
 }
 

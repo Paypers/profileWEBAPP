@@ -1,4 +1,7 @@
 import MainInfo from './MainInfo';
+import SocialTabs from './SocialTabs';
+import '../cssFiles/HomePage.css';
+
 
 function HomePage() {
   return (
@@ -8,6 +11,7 @@ function HomePage() {
       <header className="HomePage-header">
         <h1>Welcome to Jay's Website</h1>
       </header>
+      <SocialTabs />
       {/* The description, buttons, and carousel are now inside MainInfo */}
       <MainInfo />
     </div>

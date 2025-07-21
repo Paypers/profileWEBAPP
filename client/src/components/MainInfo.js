@@ -6,7 +6,6 @@ import '../cssFiles/MainInfo.css';
 function MainInfo() {
   return (
     <main className="main-info-container">
-      
       <ProjectsSection />
       <AboutSection />
     </main>
