@@ -9,7 +9,7 @@ import memphisPattern from '../assets/memphis-mini-dark-modified.webp';
 // Moved outside the component as they are true constants and don't need to be
 // part of the component's render cycle.
 const ANIMATION_START_PERCENT_VH = 40;
-const ANIMATION_DURATION_PERCENT_TOTAL = 80;
+const ANIMATION_DURATION_PERCENT_TOTAL = 50;
 
 function HomePage({ isVisible }) {
   const topLayerRef = useRef(null);

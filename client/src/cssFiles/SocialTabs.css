@@ -22,8 +22,8 @@
   height: 40px;
 }
 
-/* Style for the new "About Me" button */
-.about-me-button {
+/* Style for the navigation action buttons like "About Me" and "Contact Me" */
+.nav-action-button {
   background-color: transparent;
   border: 2px solid #ffffff;
   color: #ffffff;
@@ -34,11 +34,9 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin-right: 1.5rem;
 }
 
-.about-me-button:hover {
+.nav-action-button:hover {
   background-color: #ffffff;
   color: #282c34; /* Dark text on hover for contrast */
 }
-

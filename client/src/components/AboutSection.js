@@ -30,7 +30,7 @@ function AboutSection() {
           <p>
             On a personal note, photography is one of my greatest hobbies. I invite you to enjoy some of my favorite photos, featured alongside my projects 😊
           </p>
-
+          <h2>Skills</h2>
           <div className="skills-container">
             {skills.map((skill) => (
               <SkillPill key={skill} text={skill} />

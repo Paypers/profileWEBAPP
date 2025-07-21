@@ -5,8 +5,8 @@
   easier to adjust in one place.
 */
 :root {
-  --split-vertical-center: 73%; /* Moves the split effect up or down */
-  --split-angle-offset: 8.8vw; /* Controls the angle of the split (based on tan(10deg)) */
+  --split-vertical-center: 85%; /* Moves the split effect up or down */
+  --split-angle-offset: 4.7vw; /* Controls the angle of the split (based on tan(10deg)) */
 }
 
 .HomePage {
@@ -20,6 +20,14 @@
 
 .HomePage.visible {
   opacity: 1;
+}
+
+.HomePage h2 {
+  font-family: "Arvo";
+  padding: 1rem 1rem 0.3rem;
+  font-size: 2rem;
+  border-bottom: 2px solid #61dafb;
+  display: inline-block;
 }
 
 /* New container for the fixed background layers */
@@ -60,8 +68,8 @@
 
 /* New wrapper for the actual page content */
 .content-wrapper {
-  /* Set a fixed height much larger than the viewport to create scroll space */
-  height: 300vh;
+  /* The height is now determined by its content, allowing for natural scrolling.
+     The large artificial height has been removed to prevent "dead" scroll zones. */
   padding: 2rem 0;
   text-align: center;
   position: relative; /* Must be relative to sit above the fixed background */

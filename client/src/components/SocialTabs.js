@@ -34,18 +34,25 @@ const socialLinks = [
 ];
 
 function SocialTabs() {
-  const handleScrollToAbout = () => {
-    const aboutSection = document.getElementById('about-section');
-    if (aboutSection) {
-      // Use smooth scrolling for a better user experience
-      aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handleScrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      // Calculate the position of the section and subtract an offset for padding.
+      const yOffset = -80; // Negative value for top padding. Adjust pixels as needed.
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      // Scroll to the calculated position.
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
   return (
     <div className="social-tabs">
-      <button onClick={handleScrollToAbout} className="about-me-button">
+      <button onClick={() => handleScrollToSection('about-section')} className="nav-action-button">
         About Me
+      </button>
+      <button onClick={() => handleScrollToSection('contact-section')} className="nav-action-button">
+        Contact Me
       </button>
       {socialLinks.map(social => (
         <a 
