@@ -34,8 +34,13 @@ function ContactForm() {
     if (isLoading) return; // Prevent multiple submissions
     setIsLoading(true);
 
+    // Use an environment variable for the API URL. This allows you to use a
+    // different URL for development and production. It defaults to your local
+    // server's address for local development.
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
