@@ -9,5 +9,8 @@
     "helmet": "^8.1.0",
     "js-cookie": "^3.0.5",
     "nodemailer": "^7.0.5"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
