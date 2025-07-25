@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import '../cssFiles/IntroOverlay.css'; // Make sure to create this CSS file
+import { setIntroSeenCookie } from '../utils/cookies';
 
 function IntroOverlay({ onFinished }) {
   const [isExiting, setIsExiting] = useState(false);
 
   const handleContinueClick = () => {
     setIsExiting(true);
+    setIntroSeenCookie(); // Set the cookie so the intro doesn't show again
     // Notify the parent component after the animation duration (1.2s)
     setTimeout(onFinished, 1200);
   };

@@ -52,7 +52,7 @@ const seriousProjects = [
     {
       id: 6,
       title: 'Self-Intro Website',
-      description: 'A personal profile website built with React, showcasing some of my skills, projects, and personality :)) \n \n [Currently in developement]',
+      description: 'A personal profile website built with React, showcasing some of my skills, projects, and personality :))\\n\\n[Currently in development]',
       imageUrl: reactProjectImage, // Replace with an imported image when available
       repoUrl: '#' // TODO: Add link to your repository
     }
