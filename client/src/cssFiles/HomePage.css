@@ -1,0 +1,93 @@
+/* --- NEW AND UPDATED STYLES --- */
+
+/*
+  Define custom properties (variables) for the split effect to make it
+  easier to adjust in one place.
+*/
+:root {
+  --split-vertical-center: 85%; /* Moves the split effect up or down */
+  --split-angle-offset: 4.7vw; /* Controls the angle of the split (based on tan(10deg)) */
+}
+
+.HomePage {
+  background-color: #282c34; /* Fallback color remains */
+  position: relative; /* Needed for z-index context if required */
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+  /* The height is now determined by the content-wrapper */
+}
+
+.HomePage.visible {
+  opacity: 1;
+}
+
+.HomePage h2 {
+  font-family: "Arvo";
+  padding: 1rem 1rem 0.3rem;
+  font-size: 2rem;
+  border-bottom: 2px solid #61dafb;
+  display: inline-block;
+}
+
+/* New container for the fixed background layers */
+.background-layers {
+  position: fixed; /* Fixes the layers to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Ensures it's behind the content */
+  pointer-events: none; /* Allows scroll events to pass through to the page */
+}
+
+/* Common style for all background layers */
+.revealed-image-layer, .bottom-split-layer, .top-split-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* The bottom split layer is static and clipped to a 20-degree angle */
+.bottom-split-layer {
+  /* Uses CSS variables for easier maintenance */
+  clip-path: polygon(0% 100%, 100% 100%, 100% calc(var(--split-vertical-center) - var(--split-angle-offset)), 0% calc(var(--split-vertical-center) + var(--split-angle-offset)));
+  z-index: 2; /* Sits above the revealed image */
+}
+
+/* The top split layer is also clipped and will be animated with JS */
+.top-split-layer {
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(var(--split-vertical-center) - var(--split-angle-offset)), 0% calc(var(--split-vertical-center) + var(--split-angle-offset)));
+  z-index: 3; /* Sits on top of everything else in the background */
+  will-change: transform; /* Performance optimization for animation */
+}
+
+/* New wrapper for the actual page content */
+.content-wrapper {
+  /* The height is now determined by its content, allowing for natural scrolling.
+     The large artificial height has been removed to prevent "dead" scroll zones. */
+  padding: 2rem 0;
+  text-align: center;
+  position: relative; /* Must be relative to sit above the fixed background */
+  z-index: 1;
+}
+
+/* --- ORIGINAL STYLES (Slightly adjusted for new structure) --- */
+
+.HomePage-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-bottom: 1rem;
+}
+
+.HomePage-header h1 {
+  margin: 3px 0px 2rem;
+}

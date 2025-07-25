@@ -1,0 +1,56 @@
+.graduate-ub-container {
+  flex: 1; /* Takes up 1/3 of the available space */
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  /* The height is now controlled by the width to maintain a consistent shape. */
+  /* You can easily change the ratio here (e.g., 1/1 for a square, 16/9 for landscape). */
+  aspect-ratio: 3 / 4;
+  max-height: 700px; /* Optional: prevents the container from getting too tall on very large screens */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative; /* Needed for positioning the overlay and image */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.graduate-ub-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.click-me-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.graduate-image {
+  width: 100%;
+  height: 100%;
+  display: block; /* Added to prevent extra spacing issues */
+  object-fit: cover; /* This scales and crops the image to fill the container, ensuring it always fits vertically. */
+  animation: fadeIn 2.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* For tablet and mobile screens, set a more appropriate fixed height */
+@media (max-width: 992px) {
+  .graduate-ub-container {
+    width: 100%; /* Ensure it takes full width when stacked */
+    height: 300px; /* A more suitable fixed height for mobile */
+  }
+}

@@ -1,0 +1,42 @@
+.social-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Add space between the button and icons */
+  margin-bottom: 2rem;
+}
+
+.social-tabs a {
+  color: #ffffff; /* A nice blue for the icons */
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  display: inline-block; /* Helps with transform */
+}
+
+.social-tabs a:hover {
+  transform: translateY(-3px); /* Slight lift on hover */
+  color: #ffffff;
+}
+
+.social-tabs a svg {
+  width: 40px; /* Standardize icon size */
+  height: 40px;
+}
+
+/* Style for the navigation action buttons like "About Me" and "Contact Me" */
+.nav-action-button {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  border-radius: 25px; /* Pill shape */
+  padding: 10px 24px;
+  font-family: 'Arvo', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-action-button:hover {
+  background-color: #ffffff;
+  color: #282c34; /* Dark text on hover for contrast */
+}

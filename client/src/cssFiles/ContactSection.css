@@ -1,0 +1,21 @@
+.contact-section {
+  padding: 2rem 2rem;
+  text-align: center;
+  background-color: rgba(10, 10, 10, 0.85); /* Semi-transparent dark background */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}

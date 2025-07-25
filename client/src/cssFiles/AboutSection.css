@@ -1,0 +1,53 @@
+.about-section {
+  width: 90%;
+  max-width: 1200px;
+  height: auto;
+  padding: 2rem;
+  background-color: rgba(10, 10, 10, 0.92); /* Semi-transparent dark background */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: #f0f0f0; /* Light text color for contrast */
+}
+
+.about-section h2 {
+  font-family: "Arvo";
+  padding: .5rem 1rem 0.3rem;
+  font-size: 2rem;
+  border-bottom: 2px solid #61dafb;
+  display: inline-block;
+}
+
+.about-section p {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.about-content-wrapper {
+  display: flex;
+  gap: 2rem; /* Space between the two columns */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.about-text {
+  flex: 2; /* Takes up 2/3 of the available space */
+}
+
+.about-text p + p {
+  margin-top: 1.5rem; /* Spacing between paragraphs */
+}
+
+/* For tablet and mobile screens, stack the columns */
+@media (max-width: 992px) {
+  .about-section {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .about-content-wrapper {
+    flex-direction: column;
+  }
+
+  .about-text {
+    width: 100%; /* Ensure both columns take full width when stacked */
+  }
+}

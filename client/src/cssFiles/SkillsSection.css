@@ -1,0 +1,30 @@
+.skills-section {
+  width: 90%;
+  max-width: 1200px;
+  padding: 2rem;
+  background-color: rgba(10, 10, 10, 0.85); /* Semi-transparent dark background */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: #f0f0f0; /* Light text color for contrast */
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-family: "Arvo";
+  padding: .5rem 1rem 0.5rem;
+  font-size: 2rem;
+  border-bottom: 2px solid #61dafb;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.skills-section .skills-container {
+    margin-bottom: 1rem;
+}
+
+.skills-section .skills-subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 0rem;
+  color: #f0f0f0;
+}
