@@ -10,7 +10,8 @@ const he = require('he');
 require('dotenv').config(); // Load environment variables from .env file
 
 const app = express();
-const port = 5000; // A common port for backend servers
+// Use the port provided by the deployment platform, or 5000 for local development.
+const port = process.env.PORT || 5000;
 
 // --- Security Middleware ---
 
