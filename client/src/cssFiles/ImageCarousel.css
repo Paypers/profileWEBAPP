@@ -2,6 +2,7 @@
   position: relative;
   width: 66%; /* Set width to be 2/3 of its parent container */
   min-width: 450px;
+  max-width: 813px; /* Set a maximum width for the carousel */
   margin: 2rem auto 7rem; /* Increased bottom margin to 4rem to push content down */
   aspect-ratio: 673 / 505; /* Let height autoadjust based on width */
   perspective: 950px; /* Reduced proportionally to maintain 3D effect */

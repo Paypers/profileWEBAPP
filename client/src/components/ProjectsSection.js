@@ -4,33 +4,58 @@ import ProjectCard from './ProjectCard'; // Import the new component
 import '../cssFiles/ProjectsSection.css';
 import '../cssFiles/ProjectCard.css'; // Import the new CSS
 
-// Placeholder data for your "serious" projects.
-// You can replace this with your actual project information.
+// Import your project images here.
+// This allows Webpack to process them and provide the correct path.
+import pythonProjectImage from '../assets/ProjectImages/Python.png';
+import scalaProjectImage from '../assets/ProjectImages/Scala.svg';
+import mipsProjectImage from '../assets/ProjectImages/Mips.png';
+import goProjectImage from '../assets/ProjectImages/GoLang.png';
+import ue5ProjectImage from '../assets/ProjectImages/Unreal.png';
+import reactProjectImage from '../assets/ProjectImages/React.png';
+
 const seriousProjects = [
   {
-    id: 1,
-    title: 'Project One',
-    description: 'This is a brief description of Project One. It solves a real-world problem using modern technologies.',
-    imageUrl: 'https://via.placeholder.com/320x180.png?text=Project+One',
-    liveUrl: '#',
-    repoUrl: '#',
-  },
-  {
-    id: 2,
-    title: 'Project Two',
-    description: 'A description for Project Two, highlighting the key features and the tech stack used.',
-    imageUrl: 'https://via.placeholder.com/320x180.png?text=Project+Two',
-    liveUrl: null, // Example of a project without a live demo
-    repoUrl: '#',
-  },
-  {
-    id: 3,
-    title: 'Project Three',
-    description: 'Project Three is a collaborative effort that showcases teamwork and complex problem-solving.',
-    imageUrl: 'https://via.placeholder.com/320x180.png?text=Project+Three',
-    liveUrl: '#',
-    repoUrl: '#',
-  },
+      id: 1,
+      title: 'Python Bottle Server',
+      description: 'Built a Python web server with Bottle and Plot.ly to visualize city data using HTML/CSS.',
+      imageUrl: pythonProjectImage,
+      repoUrl: '#' // TODO: Add link to your repository
+    },
+    {
+      id: 2,
+      title: 'Scala POS System',
+      description: 'Created a point-of-sale (POS) system simulation in Scala, implementing features like BOGO deals and loyalty discounts.',
+      imageUrl: scalaProjectImage, // Replace with an imported image when available
+      repoUrl: '#' // TODO: Add link to your repository
+    },
+    {
+      id: 3,
+      title: 'MIPS Adder Project',
+      description: 'Built a 1-bit and 8-bit Arithmetic Logic Unit (ALU) from scratch using MIPS assembly language.',
+      imageUrl: mipsProjectImage, // Replace with an imported image when available
+      repoUrl: '#' // TODO: Add link to your repository
+    },
+    {
+      id: 4,
+      title: 'Parallel Map & Reduce Files',
+      description: 'Wrote a parallel word counter in Go using the MapReduce concept to efficiently analyze multiple files at once.',
+      imageUrl: goProjectImage, // Replace with an imported image when available
+      repoUrl: '#' // TODO: Add link to your repository
+    },
+    {
+      id: 5,
+      title: 'College Student Simulator',
+      description: 'In a 5-person agile team, developed a game in Unreal Engine 5, creating 3D models with Blender and delivering two vertical slices.',
+      imageUrl: ue5ProjectImage, // Replace with an imported image when available
+      repoUrl: '#' // TODO: Add link to your repository
+    },
+    {
+      id: 6,
+      title: 'Self-Intro Website',
+      description: 'A personal profile website built with React, showcasing some of my skills, projects, and personality :)) \n \n [Currently in developement]',
+      imageUrl: reactProjectImage, // Replace with an imported image when available
+      repoUrl: '#' // TODO: Add link to your repository
+    }
 ];
 
 function ProjectsSection() {
@@ -41,7 +66,7 @@ function ProjectsSection() {
       <ImageCarousel />
       <h2>A little more serious Projects:</h2>
       <div className="project-list">
-        {seriousProjects.map(project => (
+        {[...seriousProjects].reverse().map(project => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>

@@ -13,10 +13,10 @@ function IntroOverlay({ onFinished }) {
   return (
     <div className={`intro-overlay ${isExiting ? 'exit' : ''}`}>
       <div className="intro-content">
-        <h1 className="intro-title">The Digital Echo</h1>
-        <p className="intro-subtitle">A new presence is awakening.</p>
+        <h1 className="intro-title">Welcome To Jay's Website</h1>
+        <p className="intro-subtitle">My self-introduction</p>
         <button className="intro-continue-button" onClick={handleContinueClick}>
-          Descend
+          Drop me in
         </button>
       </div>
     </div>

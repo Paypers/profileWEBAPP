@@ -1,21 +1,6 @@
 import React from 'react';
 import '../cssFiles/AboutSection.css';
 import GraduateUb from './Graduate_UB';
-import SkillPill from './SkillPill';
-
-// You can list your skills or interests here
-const skills = [
-  'Scala',
-  'Python',
-  'Go',
-  'React',
-  'JavaScript',
-  'Unreal Engine 5',
-  'C++',
-  'SQL',
-  'Docker',
-  'Git',
-];
 
 function AboutSection() {
   return (
@@ -30,17 +15,9 @@ function AboutSection() {
           <p>
             On a personal note, photography is one of my greatest hobbies. I invite you to enjoy some of my favorite photos, featured alongside my projects 😊
           </p>
-          <h2>Skills</h2>
-          <div className="skills-container">
-            {skills.map((skill) => (
-              <SkillPill key={skill} text={skill} />
-            ))}
-          </div>
         </div>
         
       </div>
-
-      
     </section>
     
   );

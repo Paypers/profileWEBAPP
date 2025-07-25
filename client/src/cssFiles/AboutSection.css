@@ -1,10 +1,9 @@
 .about-section {
   width: 90%;
-  max-width: 90%;
-  height: auto; /* Adjust height to content */
-  margin: 4rem auto;
+  max-width: 1200px;
+  height: auto;
   padding: 2rem;
-  background-color: rgba(10, 10, 10, 0.85); /* Semi-transparent dark background */
+  background-color: rgba(10, 10, 10, 0.92); /* Semi-transparent dark background */
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   color: #f0f0f0; /* Light text color for contrast */
