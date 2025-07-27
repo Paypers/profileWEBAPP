@@ -1,0 +1,15 @@
+# AWS App Runner configuration file for the BACKEND service
+version: 1.0
+runtime: nodejs18
+
+build:
+  commands:
+    # Install backend dependencies from the root package.json
+    - npm install
+
+run:
+  # The start command from the root package.json (runs "node index.js")
+  command: npm start
+  network:
+    # The port your Express server listens on.
+    port: 5000
