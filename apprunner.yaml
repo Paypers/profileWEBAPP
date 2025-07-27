@@ -1,25 +1,18 @@
-# The version of the configuration file format.
+# AWS App Runner configuration file
+# Place this file in the root of your repository (e.g., d:\profileWEBAPP\apprunner.yaml)
 version: 1.0
+runtime: nodejs18 # You can use other supported versions like nodejs20
 
-# The runtime environment for your application.
-runtime: nodejs18
-
-# Commands to build your application.
 build:
   commands:
-    # Commands that run before the build.
     pre-build:
-      - echo "Installing server dependencies..."
-      - (cd server && npm ci)
-      - echo "Installing client dependencies..."
-      - (cd client && npm ci)
-    # Commands that build your code.
+      - cd client
+      - npm install
     build:
-      - echo "Building the client application..."
-      - (cd client && CI=false npm run build)
+      - npm run build
 
-# The command to start your application.
 run:
-  command: cd server && node server.js
+  command: npm run --prefix client serve
+  port: 3000
   network:
-    port: 5000
+    port: 3000
