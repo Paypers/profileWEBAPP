@@ -34,10 +34,11 @@ function ContactForm() {
     if (isLoading) return; // Prevent multiple submissions
     setIsLoading(true);
 
-    // Use an environment variable for the API URL. This allows you to use a
-    // different URL for development and production. It defaults to your local
-    // server's address for local development.
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+    // Determine the API URL based on the environment.
+    // In development, it uses the local server. In production, it uses the deployed App Runner URL.
+    const apiUrl = process.env.NODE_ENV === 'production'
+      ? 'https://r7pr82sinj.us-east-2.awsapprunner.com/'
+      : 'http://localhost:5000';
 
     try {
       const response = await fetch(`${apiUrl}/api/contact`, {
