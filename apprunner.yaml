@@ -6,12 +6,12 @@ runtime: nodejs18 # You can use other supported versions like nodejs20
 build:
   commands:
     build:
-      # Install dependencies directly in the /client directory
-      - npm install --prefix client
-      # Run the build script from /client/package.json
-      - npm run build --prefix client
+      # Install dependencies from the root package.json for the server
+      - npm install
 
 run:
-  command: npm run --prefix client serve
+  # Run the start script from the root package.json to launch the Express server
+  command: npm start
   network:
-    port: 3000
+    # The port your Express server listens on. Inferred from the client's proxy setting.
+    port: 5000
