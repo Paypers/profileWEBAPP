@@ -37,7 +37,7 @@ function ContactForm() {
     // Determine the API URL based on the environment.
     // In development, it uses the local server. In production, it uses the deployed App Runner URL.
     const apiUrl = process.env.NODE_ENV === 'production'
-      ? 'https://r7pr82sinj.us-east-2.awsapprunner.com/'
+      ? 'https://r7pr82sinj.us-east-2.awsapprunner.com'
       : 'http://localhost:5000';
 
     try {
