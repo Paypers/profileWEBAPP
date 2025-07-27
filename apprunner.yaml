@@ -1,0 +1,25 @@
+# The version of the configuration file format.
+version: 1.0
+
+# The runtime environment for your application.
+runtime: nodejs18
+
+# Commands to build your application.
+build:
+  commands:
+    # Commands that run before the build. Installs dependencies for both client and server.
+    pre-build:
+      - echo "Installing server dependencies..."
+      - (cd server && npm ci)
+      - echo "Installing client dependencies..."
+      - (cd client && npm ci)
+    # Commands that build your code.
+    build:
+      - echo "Building the client application..."
+      - (cd client && npm run build)
+
+# The command to start your application.
+run:
+  working_directory: /server
+  command: node server.js
+  port: 5000
