@@ -15,5 +15,6 @@ run:
   network:
     # The port your Express server listens on. Inferred from the client's proxy setting.
     port: 5000
-  runtime-environment-variables:
-    EMAIL_SERVICE: "gmail"
+  env:
+    - name: EMAIL_SERVICE
+      value: "gmail"
