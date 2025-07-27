@@ -5,11 +5,11 @@ runtime: nodejs18 # You can use other supported versions like nodejs20
 
 build:
   commands:
-    pre-build:
-      - cd client
-      - npm install
     build:
-      - npm run build
+      # Install dependencies directly in the /client directory
+      - npm install --prefix client
+      # Run the build script from /client/package.json
+      - npm run build --prefix client
 
 run:
   command: npm run --prefix client serve
