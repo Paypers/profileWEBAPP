@@ -7,7 +7,7 @@ runtime: nodejs18
 # Commands to build your application.
 build:
   commands:
-    # Commands that run before the build. Installs dependencies for both client and server.
+    # Commands that run before the build.
     pre-build:
       - echo "Installing server dependencies..."
       - (cd server && npm ci)
@@ -20,9 +20,6 @@ build:
 
 # The command to start your application.
 run:
-  # Sets the directory for the start command.
-  working_directory: /server
-  # The command to start the server.
-  command: node server.js
+  command: cd server && node server.js
   network:
     port: 5000
