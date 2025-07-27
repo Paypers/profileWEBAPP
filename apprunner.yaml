@@ -2,7 +2,7 @@
 version: 1.0
 
 # The runtime environment for your application.
-runtime: nodejs18
+runtime: nodejs20
 
 # Commands to build your application.
 build:
@@ -16,10 +16,13 @@ build:
     # Commands that build your code.
     build:
       - echo "Building the client application..."
-      - (cd client && npm start)
+      - (cd client && npm run build)
 
 # The command to start your application.
 run:
-  command: cd server && node server.js
+  # Sets the directory for the start command.
+  working_directory: /server
+  # The command to start the server.
+  command: node server.js
   network:
     port: 5000
