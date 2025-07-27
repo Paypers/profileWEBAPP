@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../cssFiles/IntroOverlay.css'; // Make sure to create this CSS file
-import { setIntroSeenCookie } from '../utils/cookies';
+import { setIntroSeenCookie } from '../utils/cookies.js';
 
 function IntroOverlay({ onFinished }) {
   const [isExiting, setIsExiting] = useState(false);

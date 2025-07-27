@@ -1,5 +1,5 @@
 {
-  "name": "profile-server",
+  "name": "server",
   "version": "1.0.0",
   "description": "Backend server for the profile website.",
   "main": "server.js",
