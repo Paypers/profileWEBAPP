@@ -2,7 +2,7 @@
 version: 1.0
 
 # The runtime environment for your application.
-runtime: nodejs20
+runtime: nodejs18
 
 # Commands to build your application.
 build:
