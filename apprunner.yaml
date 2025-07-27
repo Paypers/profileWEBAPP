@@ -1,14 +1,17 @@
 # AWS App Runner configuration file
 # Place this file in the root of your repository (e.g., d:\profileWEBAPP\apprunner.yaml)
 version: 1.0
-runtime: nodejs18
+runtime: nodejs18 # You can use other supported versions like nodejs20
 
 build:
   commands:
-    # Install dependencies directly in the /client directory
-    - npm install --prefix client
-    # Run the build script from /client/package.json
-    - npm run build --prefix client
+    build:
+      # Install dependencies directly in the /client directory
+      - npm install --prefix client
+      # Run the build script from /client/package.json
+      - npm run build --prefix client
 
 run:
   command: npm run --prefix client serve
+  network:
+    port: 3000
