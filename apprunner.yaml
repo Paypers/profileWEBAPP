@@ -16,7 +16,7 @@ build:
     # Commands that build your code.
     build:
       - echo "Building the client application..."
-      - (cd client && npm run build)
+      - (cd client && CI=false npm run build)
 
 # The command to start your application.
 run:
