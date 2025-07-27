@@ -20,6 +20,5 @@ build:
 
 # The command to start your application.
 run:
-  working_directory: /server
-  command: node server.js
+  command: cd server && node server.js
   port: 5000
