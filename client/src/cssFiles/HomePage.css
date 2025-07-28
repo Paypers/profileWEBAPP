@@ -91,3 +91,51 @@
 .HomePage-header h1 {
   margin: 3px 0px 2rem;
 }
+
+/* --- STYLES FOR FIXED CONFETTI BUTTONS --- */
+.fixed-buttons-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fixed-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+
+  /* Center the emoji */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+
+  /* Styling */
+  border: 2px solid var(--accent-color);
+  background-color: var(--secondary-bg-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fixed-button:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.fixed-button.left {
+  left: 3%;
+}
+
+.fixed-button.right {
+  right: 3%;
+}

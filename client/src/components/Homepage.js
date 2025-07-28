@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import MainInfo from './MainInfo';
 import SocialTabs from './SocialTabs';
+import { ConfettiFireworksButton } from './ConfettiFireworkButton';
+import { ConfettiSideCannonsButton } from './ConfettiSideCannonButton';
 import '../cssFiles/HomePage.css';
 import revealedImage from '../assets/UB-Pics/Me-2-UP.webp';
 import memphisPattern from '../assets/memphis-mini-dark-modified.webp';
@@ -62,6 +64,15 @@ function HomePage({ isVisible }) {
         ></div>
       </div>
 
+      <div className="fixed-buttons-container">
+        <ConfettiFireworksButton className="fixed-button left">
+          <span role="img" aria-label="Fireworks">🎉</span>
+        </ConfettiFireworksButton>
+        <ConfettiSideCannonsButton className="fixed-button right">
+          <span role="img" aria-label="Party Popper">🎉</span>
+        </ConfettiSideCannonsButton>
+      </div>
+      
       <div className="content-wrapper">
         <header className="HomePage-header">
           <h1>Welcome to Jay's Website</h1>
@@ -69,6 +80,8 @@ function HomePage({ isVisible }) {
         <SocialTabs />
         <MainInfo />
       </div>
+
+      
     </div>
   );
 }
