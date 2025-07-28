@@ -4,7 +4,11 @@ import '../cssFiles/ProjectCard.css';
 function ProjectCard({ project }) {
   return (
     <div className="project-card">
-      <img src={project.imageUrl} alt={project.title} className="project-image" />
+      <div className="project-images-container">
+        {project.imageUrls && project.imageUrls.map((url, index) => (
+          <img key={index} src={url} alt={`${project.title} screenshot ${index + 1}`} className="project-image" />
+        ))}
+      </div>
       <div className="project-info">
         <h3 className="project-title">{project.title}</h3>
         <p className="project-description">{project.description}</p>
