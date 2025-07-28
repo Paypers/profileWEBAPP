@@ -12,48 +12,51 @@ import mipsProjectImage from '../assets/ProjectImages/Mips.png';
 import goProjectImage from '../assets/ProjectImages/GoLang.png';
 import ue5ProjectImage from '../assets/ProjectImages/Unreal.png';
 import reactProjectImage from '../assets/ProjectImages/React.png';
+import AWSImage from '../assets/ProjectImages/AWS.png';
+import BlenderImage from '../assets/ProjectImages/Blender.png';
+import CSSImage from '../assets/ProjectImages/CSS.png';
 
 const seriousProjects = [
   {
       id: 1,
       title: 'Python Bottle Server',
       description: 'Built a Python web server with Bottle and Plot.ly to visualize city data using HTML/CSS.',
-      imageUrl: pythonProjectImage,
+      imageUrls: [pythonProjectImage],
       repoUrl: '#' // TODO: Add link to your repository
     },
     {
       id: 2,
       title: 'Scala POS System',
       description: 'Created a point-of-sale (POS) system simulation in Scala, implementing features like BOGO deals and loyalty discounts.',
-      imageUrl: scalaProjectImage, // Replace with an imported image when available
+      imageUrls: [scalaProjectImage], // Example with two images
       repoUrl: '#' // TODO: Add link to your repository
     },
     {
       id: 3,
       title: 'MIPS Adder Project',
       description: 'Built a 1-bit and 8-bit Arithmetic Logic Unit (ALU) from scratch using MIPS assembly language.',
-      imageUrl: mipsProjectImage, // Replace with an imported image when available
+      imageUrls: [mipsProjectImage],
       repoUrl: '#' // TODO: Add link to your repository
     },
     {
       id: 4,
       title: 'Parallel Map & Reduce Files',
       description: 'Wrote a parallel word counter in Go using the MapReduce concept to efficiently analyze multiple files at once.',
-      imageUrl: goProjectImage, // Replace with an imported image when available
+      imageUrls: [goProjectImage],
       repoUrl: '#' // TODO: Add link to your repository
     },
     {
       id: 5,
       title: 'College Student Simulator',
       description: 'In a 5-person agile team, developed a game in Unreal Engine 5, creating 3D models with Blender and delivering two vertical slices.',
-      imageUrl: ue5ProjectImage, // Replace with an imported image when available
+      imageUrls: [ue5ProjectImage, BlenderImage],
       repoUrl: '#' // TODO: Add link to your repository
     },
     {
       id: 6,
       title: 'Self-Intro Website',
-      description: 'A personal profile website built with React, showcasing some of my skills, projects, and personality :))\\n\\n[Currently in development]',
-      imageUrl: reactProjectImage, // Replace with an imported image when available
+      description: 'A personal profile website built with React, showcasing some of my skills, projects, and personality',
+      imageUrls: [reactProjectImage, AWSImage, CSSImage],
       repoUrl: '#' // TODO: Add link to your repository
     }
 ];
