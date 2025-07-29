@@ -65,10 +65,10 @@ function HomePage({ isVisible }) {
       </div>
 
       <div className="fixed-buttons-container">
-        <ConfettiFireworksButton className="fixed-button left">
-          <span role="img" aria-label="Fireworks">🎉</span>
+        <ConfettiFireworksButton className="fixed-button right">
+          <span role="img" aria-label="Fireworks">🎆</span>
         </ConfettiFireworksButton>
-        <ConfettiSideCannonsButton className="fixed-button right">
+        <ConfettiSideCannonsButton className="fixed-button left">
           <span role="img" aria-label="Party Popper">🎉</span>
         </ConfettiSideCannonsButton>
       </div>
