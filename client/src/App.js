@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import HomePage from './components/Homepage';
 import IntroOverlay from './components/IntroOverlay';
-import { getIntroSeenCookie } from './utils/cookies.js';
+// --- CHANGE --- Import the new cookie removal function
+import { getIntroSeenCookie, removeIntroSeenCookie } from './utils/cookies.js';
 
 function App() {
   const hasSeenIntroBefore = getIntroSeenCookie();
@@ -29,6 +30,22 @@ function App() {
     setIsIntroVisible(false);
   };
 
+  // --- NEW ---
+  /**
+   * Resets the application state to show the intro overlay again.
+   * This function is passed down to the SocialTabs component.
+   */
+  const handleRestartIntro = () => {
+    removeIntroSeenCookie();
+    setIsHomePageVisible(false); // Hide the homepage
+    
+    // The conditional rendering for IntroOverlay in the JSX ensures that
+    // when isIntroVisible becomes true again, the component re-mounts
+    // with its internal state completely reset.
+    setIsIntroVisible(true);
+  };
+
+
   return (
     <div className="App">
       {/* The IntroOverlay remains in the DOM until its own animation is finished. */}
@@ -39,8 +56,8 @@ function App() {
         />
       )}
       
-      {/* The HomePage is always in the DOM, allowing its CSS transition to work correctly. */}
-      <HomePage isVisible={isHomePageVisible} />
+      {/* --- CHANGE --- Pass the restart handler to the HomePage */}
+      <HomePage isVisible={isHomePageVisible} onRestartIntro={handleRestartIntro} />
     </div>
   );
 }

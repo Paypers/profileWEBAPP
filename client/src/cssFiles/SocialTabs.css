@@ -42,7 +42,7 @@
 }
 
 /* Responsive adjustments for smaller screens */
-@media (max-width: 470px) {
+@media (max-width: 630px) {
   .social-tabs {
     gap: 0.75rem; /* Reduce space between items */
     flex-wrap: wrap; /* Allow items to wrap if needed */

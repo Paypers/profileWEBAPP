@@ -12,36 +12,28 @@ import '../cssFiles/SocialTabs.css';
 const socialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com/Paypers', // TODO: Replace with your GitHub URL
+    url: 'https://github.com/Paypers',
     icon: <GithubIcon />,
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/jielili/', // TODO: Replace with your LinkedIn URL
+    url: 'https://www.linkedin.com/in/jielili/',
     icon: <LinkedInIcon />,
   },
   {
     name: 'Instagram',
-    url: 'https://www.instagram.com/jayl.shotss/', // TODO: Replace with your Instagram URL
+    url: 'https://www.instagram.com/jayl.shotss/',
     icon: <InstagramIcon />,
   },
-  // Add more social media links here
-  // {
-  //   name: 'Twitter',
-  //   url: 'https://twitter.com/your-handle',
-  //   icon: <TwitterIcon />,
-  // },
 ];
 
-function SocialTabs() {
+// --- CHANGE --- Accept the onRestartIntro prop
+function SocialTabs({ onRestartIntro }) {
   const handleScrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      // Calculate the position of the section and subtract an offset for padding.
-      const yOffset = -80; // Negative value for top padding. Adjust pixels as needed.
+      const yOffset = -80;
       const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-      // Scroll to the calculated position.
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
@@ -53,6 +45,10 @@ function SocialTabs() {
       </button>
       <button onClick={() => handleScrollToSection('contact-section')} className="nav-action-button">
         Contact Me
+      </button>
+      {/* --- NEW --- The button to restart the intro */}
+      <button onClick={onRestartIntro} className="nav-action-button">
+        Intro again!
       </button>
       {socialLinks.map(social => (
         <a 
