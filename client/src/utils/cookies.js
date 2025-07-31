@@ -11,3 +11,8 @@ export const setIntroSeenCookie = () => {
 export const getIntroSeenCookie = () => {
   return Cookies.get(INTRO_COOKIE_NAME);
 };
+
+// Removes the intro cookie to allow the intro to be shown again.
+export const removeIntroSeenCookie = () => {
+  Cookies.remove(INTRO_COOKIE_NAME, { path: '/' });
+};

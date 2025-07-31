@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import confetti from 'canvas-confetti';
 import '../cssFiles/ContactForm.css';
 
 function ContactForm() {
@@ -9,6 +10,7 @@ function ContactForm() {
   });
   const [status, setStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const submitButtonRef = useRef(null);
 
   // Effect to clear the status message after 5 seconds
   useEffect(() => {
@@ -54,6 +56,21 @@ function ContactForm() {
       if (response.ok) {
         setStatus(data.message);
         setFormData({ name: '', email: '', message: '' }); // Clear form
+
+        // Fire confetti from the button's position on success
+        if (submitButtonRef.current) {
+          const rect = submitButtonRef.current.getBoundingClientRect();
+          const x = rect.left + rect.width / 2;
+          const y = rect.top + rect.height / 2;
+          confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: {
+              x: x / window.innerWidth,
+              y: y / window.innerHeight,
+            },
+          });
+        }
       } else {
         setStatus(`Error: ${data.message || 'Something went wrong.'}`);
       }
@@ -98,7 +115,7 @@ function ContactForm() {
           required
         ></textarea>
       </div>
-      <button type="submit" className="submit-button" disabled={isLoading}>
+      <button ref={submitButtonRef} type="submit" className="submit-button" disabled={isLoading}>
         {isLoading ? 'Sending...' : 'Send Message'}
       </button>
       {status && <p className="form-status">{status}</p>}

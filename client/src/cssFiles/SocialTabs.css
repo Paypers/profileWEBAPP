@@ -40,3 +40,21 @@
   background-color: #ffffff;
   color: #282c34; /* Dark text on hover for contrast */
 }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 630px) {
+  .social-tabs {
+    gap: 0.75rem; /* Reduce space between items */
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+  }
+
+  .social-tabs a svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-action-button {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+}
