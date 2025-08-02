@@ -14,7 +14,7 @@ function ProjectCard({ project }) {
         <p className="project-description">{project.description}</p>
         <div className="project-links">
           {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">Live Demo</a>}
-          {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">GitHub</a>}
+          {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">{project.repoUrl === '#' ? 'GitHub [private]' : 'GitHub'}</a>}
         </div>
       </div>
     </div>

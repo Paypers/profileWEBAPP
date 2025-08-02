@@ -57,7 +57,7 @@ const seriousProjects = [
       title: 'Self-Intro Website',
       description: 'A personal profile website built with React, showcasing some of my skills, projects, and personality',
       imageUrls: [reactProjectImage, AWSImage, CSSImage],
-      repoUrl: '#' // TODO: Add link to your repository
+      repoUrl: 'https://github.com/Paypers/profileWEBAPP' // TODO: Add link to your repository
     }
 ];
 
