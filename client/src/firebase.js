@@ -4,11 +4,10 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// Import App Check
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDbpV20IDdhiO_mloiWvRr73pJZkXQKnrE",
   authDomain: "profi-a7bb3.firebaseapp.com",
@@ -21,6 +20,19 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize App Check
+// IMPORTANT: Replace 'YOUR_RECAPTCHA_V3_SITE_KEY' with your actual site key.
+// 1. Go to https://cloud.google.com/recaptcha-enterprise/ and create a new key.
+// 2. Choose "Website" and add your domain (e.g., profi-a7bb3.web.app).
+// 3. Uncheck "Enable "Are you a robot?" checkbox challenge".
+// 4. Copy the generated Site Key here.
+initializeAppCheck(app, {
+  provider: new ReCaptchaV3Provider('YOUR_RECAPTCHA_V3_SITE_KEY'),
+
+  // Optional: set to true if you want to allow auto-refresh.
+  isTokenAutoRefreshEnabled: true
+});
 
 // Initialize and export the Firebase services you want to use
 const analytics = getAnalytics(app);
